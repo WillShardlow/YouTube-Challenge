@@ -1,5 +1,5 @@
-"""A video playlist library class."""
+"""A playlist library class."""
 
 
-class Playlist:
+class PlaylistLibrary:
     """A class used to represent a Playlist Library."""
