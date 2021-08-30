@@ -5,25 +5,6 @@ from .playback import PlayBack
 import random
 
 
-def tag_printer(tags):
-
-    if tags == ():
-        return '[]'
-    else:
-        tags_string = ''
-        num_tags = len(tags)
-
-        for i in range(num_tags-1):
-            tags_string = tags_string + tags[i] + ' '
-        tags_string = tags_string + tags[num_tags-1]
-
-        return f'[{tags_string}]'
-
-
-def single_printer(video):
-    return(f"{video.title} ({video.video_id}) {tag_printer(video.tags)}")
-
-
 class VideoPlayer:
     """A class used to represent a Video Player."""
 
@@ -37,6 +18,25 @@ class VideoPlayer:
         but having all the various classes and methods etc. defined.'''
 
         print(self._video_library._videos)
+
+    @staticmethod
+    def tag_printer(tags):
+
+        if tags == ():
+            return '[]'
+        else:
+            tags_string = ''
+            num_tags = len(tags)
+
+            for i in range(num_tags-1):
+                tags_string = tags_string + tags[i] + ' '
+            tags_string = tags_string + tags[num_tags-1]
+
+            return f'[{tags_string}]'
+
+    @staticmethod
+    def single_printer(video):
+        return(f"{video.title} ({video.video_id}) {VideoPlayer.tag_printer(video.tags)}")
 
     def number_of_videos(self):
         """Returns number of videos"""
@@ -54,7 +54,7 @@ class VideoPlayer:
 
         print("Here\'s a list of all available videos:")
         for i in range(self._num_videos):
-            print(single_printer(list_videos[i]))
+            print(VideoPlayer.single_printer(list_videos[i]))
 
     def play_video(self, video_id):
         """Plays the respective video.
@@ -120,9 +120,9 @@ class VideoPlayer:
         if current_video is None:
             print("No video is currently playing")
         elif self._playback._playback_state == "Paused":
-            print(f"Currently playing: {single_printer(current_video)} - PAUSED")
+            print(f"Currently playing: {VideoPlayer.single_printer(current_video)} - PAUSED")
         else:
-            print(f"Currently playing: {single_printer(current_video)}")
+            print(f"Currently playing: {VideoPlayer.single_printer(current_video)}")
 
     def create_playlist(self, playlist_name):
         """Creates a playlist with a given name.
