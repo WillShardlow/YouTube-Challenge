@@ -33,7 +33,7 @@ class VideoLibrary:
                 )
 
     def get_all_videos(self):
-        """Returns all available video information from the video library."""
+        """Returns all available video information from the video library as a list."""
         return list(self._videos.values())
 
     def get_video(self, video_id):

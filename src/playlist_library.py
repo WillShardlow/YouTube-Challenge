@@ -29,6 +29,7 @@ class PlaylistLibrary:
         self._playlists[new_playlist.name.upper()] = new_playlist
 
     def delete_playlist(self, playlist_name):
+        """Deletes playlist from the library"""
         self._playlists.pop(playlist_name.upper())
 
     # def add_playlist(self, playlist):

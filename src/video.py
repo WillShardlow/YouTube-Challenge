@@ -35,16 +35,20 @@ class Video:
 
     @property
     def flagged(self):
+        """Returns True if video is flagged and False if not"""
         return self._flagged
 
     @property
     def flag_reason(self):
+        """Returns the reason a video was flagged"""
         return self._flag_reason
 
     def flag(self, flag_reason):
+        """Flags a video"""
         self._flagged = True
         self._flag_reason = flag_reason
 
     def unflag(self):
+        """Unflags a video"""
         self._flagged = False
         self._flag_reason = "Video is not flagged"

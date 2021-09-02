@@ -26,6 +26,7 @@ class VideoPlayer:
 
     @staticmethod
     def tag_printer(tags):
+        """Prints the tags associated with a video in square brackets, separated by a space"""
 
         if tags == ():
             return '[]'
@@ -41,6 +42,7 @@ class VideoPlayer:
 
     @staticmethod
     def single_printer(video):
+        """Prints all video information in a nice format"""
         return(f"{video.title} ({video.video_id}) {VideoPlayer.tag_printer(video.tags)}")
 
     def number_of_videos(self):
