@@ -17,3 +17,5 @@ To see a list of all available commands, type `HELP` as a command. To exit the a
 I recommend starting with `SHOW_ALL_VIDEOS` to see all available videos in the library, along with their tags and IDs.
 
 You can then try out the various features such as playing videos and creating playlists.
+
+![](Demo.gif)
