@@ -18,4 +18,6 @@ I recommend starting with `SHOW_ALL_VIDEOS` to see all available videos in the l
 
 You can then try out the various features such as playing videos and creating playlists.
 
+## Demo
+
 ![](Demo.gif)
